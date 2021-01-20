@@ -49,7 +49,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		if(employeeDto.getProjectDto() != null && !employeeDto.getProjectDto().isEmpty()) {
 			List<Project> listProject  = new ArrayList<Project>(0);
 			for (ProjectDto projectDto : employeeDto.getProjectDto()) {
-				Project project = new Project();
+				
+				Project project = null;
+				if(projectDto != null) {
+					project = projectRepository.findProjectById(projectDto.getId());
+				}
 				project.setProjectDescription(projectDto.getProjectDescription());
 				project.setProjectName(projectDto.getProjectName());
 				project.setIsDeleted(false);

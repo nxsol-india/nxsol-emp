@@ -2,8 +2,16 @@ package com.nxsol.dto;
 
 public class ProjectDto {
 
+	private Long id;
 	private String projectName;
 	private String projectDescription;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getProjectName() {
 		return projectName;
 	}

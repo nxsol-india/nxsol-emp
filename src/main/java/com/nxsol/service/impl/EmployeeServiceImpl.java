@@ -44,7 +44,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 			}
 
 			employeeDto.setProjectDto(projectDtos);
-			employeeDtos.add(employeeDto);
+			employeeDtos.add(employeeDto); 
 		}
 		return employeeDtos;
 	}

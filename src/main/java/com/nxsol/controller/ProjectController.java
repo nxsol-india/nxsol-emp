@@ -51,7 +51,7 @@ public class ProjectController {
 	public ResponseEntity<?> addNewProject(@RequestBody ProjectDto projectDto) throws Exception {
 		return new ResponseEntity<>(projectService.addProject(projectDto), HttpStatus.OK);	
 	}
-	
+	 
 	@PutMapping()
 	public ResponseEntity<?> updateProject(@RequestBody ProjectDto projectDto) throws Exception {
 		return new ResponseEntity<>(projectService.updateProject(projectDto), HttpStatus.OK);

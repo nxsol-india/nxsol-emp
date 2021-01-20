@@ -6,6 +6,7 @@ public class EmployeeDto {
 	
 	private Long id;
 	private String empName;
+	private Boolean isDeleted;
 	private List<ProjectDto> projectDto;
 	
 	
@@ -26,5 +27,11 @@ public class EmployeeDto {
 	}
 	public void setProjectDto(List<ProjectDto> projectDto) {
 		this.projectDto = projectDto;
+	}
+	public Boolean getIsDeleted() {
+		return isDeleted;
+	}
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 }

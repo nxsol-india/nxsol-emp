@@ -5,6 +5,7 @@ public class ProjectDto {
 	private Long id;
 	private String projectName;
 	private String projectDescription;
+	private Boolean isDeleted;
 	
 	public Long getId() {
 		return id;
@@ -23,5 +24,11 @@ public class ProjectDto {
 	}
 	public void setProjectDescription(String projectDescription) {
 		this.projectDescription = projectDescription;
+	}
+	public Boolean getIsDeleted() {
+		return isDeleted;
+	}
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 }

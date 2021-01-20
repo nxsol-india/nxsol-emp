@@ -13,7 +13,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 	
 	
 	@Query(value="SELECT * FROM Employee emp WHERE emp.isDeleted=false")
-	public List<Employee> findAllEmployee();
+	public List<Employee> findAllEmployeesByIsDeletedFalse();
 	
 	@Query(value="SELECT emp FROM Employee emp WHERE emp.id=?1 and emp.isDeleted=false ")
 	public Employee findEmployeeById(Long id);

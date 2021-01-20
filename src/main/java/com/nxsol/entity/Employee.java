@@ -14,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="employee")
 public class Employee implements Serializable {
@@ -27,6 +29,7 @@ public class Employee implements Serializable {
 	@Column(name = "empName")
 	private String empName;
 	
+	@JsonIgnore
 	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name="employee_project",
     joinColumns={@JoinColumn(name="employeeId")},

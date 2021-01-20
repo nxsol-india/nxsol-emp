@@ -7,9 +7,9 @@ import com.nxsol.entity.Employee;
 
 public interface EmployeeService {
 	
-	public List<Employee> findAllEmployee() throws Exception;
+	public List<EmployeeDto> findAllEmployee() throws Exception;
 	
-	public Employee findEmployeeById(Long id) throws Exception;
+	public EmployeeDto findEmployeeById(Long id) throws Exception;
 	
 	public Employee addEmployee(EmployeeDto employeeDto) throws Exception;
 	

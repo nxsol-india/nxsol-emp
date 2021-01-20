@@ -3,6 +3,7 @@ package com.nxsol.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Employee implements Serializable {
 	@Column(name = "empName")
 	private String empName;
 	
-	@ManyToMany
+	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name="employee_project",
     joinColumns={@JoinColumn(name="employeeId")},
     inverseJoinColumns={@JoinColumn(name="projectId")})

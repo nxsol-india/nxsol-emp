@@ -63,6 +63,5 @@ public class EmployeeController {
 	public ResponseEntity<?> deleteEmployee(@PathVariable Long id) throws Exception {
 		employeeService.deleteEmployee(id);
 		return new ResponseEntity<>(HttpStatus.OK);
-		
 	}
 }

@@ -61,5 +61,6 @@ public class ProjectController {
 	public ResponseEntity<?> deleteProject(@PathVariable Long id) throws Exception {
 		projectService.deleteProject(id);
 		return new ResponseEntity<>(HttpStatus.OK);
+		
 	}
 }

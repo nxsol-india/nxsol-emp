@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="project")
 public class Project implements Serializable {
@@ -31,6 +33,7 @@ public class Project implements Serializable {
 	@Column(name = "isDeleted")
 	private Boolean isDeleted;
 
+	@JsonIgnore
 	@ManyToMany(mappedBy = "project")
 	private Set<Employee> employees = new HashSet<>();
 

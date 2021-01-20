@@ -2,17 +2,19 @@ package com.nxsol.service;
 
 import java.util.List;
 
+import com.nxsol.dto.ProjectDto;
 import com.nxsol.entity.Project;
 
 public interface ProjectService {
 	
-	public Project addProject(Project project) throws Exception;
+	public List<ProjectDto> findAllProjects() throws Exception;
 	
-	public Project updateProject(Project project) throws Exception;
+	public ProjectDto findProjectById(Long id) throws Exception;
+	
+	public Project addProject(ProjectDto project) throws Exception;
+	
+	public Project updateProject(ProjectDto projectDto) throws Exception;
 	
 	public Project deleteProject(Long id) throws Exception;
 	
-	public List<Project> findAllProjects() throws Exception;
-	
-	public Project findProjectById(Long id) throws Exception;
 }

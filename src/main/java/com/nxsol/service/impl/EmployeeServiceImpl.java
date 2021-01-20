@@ -36,9 +36,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 			List<ProjectDto> projectDtos = new ArrayList<ProjectDto>(0);
 			for (Project project : employee_.getProject()) {
-				ProjectDto projectDto = new ProjectDto();
-				BeanUtils.copyProperties(project, projectDto);
-				projectDtos.add(projectDto);
+				if(project.getIsDeleted() == false) {
+					ProjectDto projectDto = new ProjectDto();
+					BeanUtils.copyProperties(project, projectDto);
+					projectDtos.add(projectDto);
+				}
 			}
 
 			employeeDto.setProjectDto(projectDtos);
@@ -58,9 +60,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 			List<ProjectDto> projectDtos = new ArrayList<ProjectDto>(0);
 			for (Project project : empExisting.getProject()) {
-				ProjectDto projectDto = new ProjectDto();
-				BeanUtils.copyProperties(project, projectDto);
-				projectDtos.add(projectDto);
+				if(project.getIsDeleted() == false) {
+					ProjectDto projectDto = new ProjectDto();
+					BeanUtils.copyProperties(project, projectDto);
+					projectDtos.add(projectDto);
+				}
 			}
 
 			employeeDto.setProjectDto(projectDtos);
@@ -83,7 +87,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 				Project project = null;
 				if(projectDto.getId() != null) {
-					project = projectRepository.findProjectById(projectDto.getId());
+					project = projectRepository.findProjectByIdAndIsDeletedFalse(projectDto.getId());
 				}else {
 					project = new Project();
 				}
@@ -111,7 +115,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 					Project project = null;
 					if(projectDto.getId() != null) {
-						project = projectRepository.findProjectById(projectDto.getId());
+						project = projectRepository.findProjectByIdAndIsDeletedFalse(projectDto.getId());
 					}else {
 						project = new Project();
 					}
